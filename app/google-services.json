@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "832328056167",
+    "firebase_url": "https://kobo-91dcf.firebaseio.com",
+    "project_id": "kobo-91dcf",
+    "storage_bucket": "kobo-91dcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832328056167:android:4fa353f18bd63af0",
+        "android_client_info": {
+          "package_name": "com.example.charin.koboapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832328056167-mvmc6jhp7ac925a1u25aokamkc8134e8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.charin.koboapplication",
+            "certificate_hash": "7b2a31baad4debd1a7202b17aaff1fc35e3e3e03"
+          }
+        },
+        {
+          "client_id": "832328056167-i2m6c6ovv7clcc0ofj87lotmhf1pkhv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdO77d7GtHmxmc30Da64rFtHjLbBQ0_7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832328056167-i2m6c6ovv7clcc0ofj87lotmhf1pkhv0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
