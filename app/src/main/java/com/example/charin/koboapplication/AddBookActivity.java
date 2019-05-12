@@ -60,6 +60,7 @@ public class AddBookActivity extends AppCompatActivity {
         publisherDBRef = FirebaseDatabase.getInstance().getReference().child("Publishers").child(publisherRef).child("publisher_amount");
         bookDBRef = FirebaseDatabase.getInstance().getReference().child("Publishers").child(publisherRef).child("Books");
         mStorage = FirebaseStorage.getInstance().getReferenceFromUrl("gs://kobo-91dcf.appspot.com/");
+        bookIMG="";
 
         name = (EditText) findViewById(R.id.bookNameAdd);
         author = (EditText) findViewById(R.id.bookAuthorAdd);
@@ -109,10 +110,12 @@ public class AddBookActivity extends AppCompatActivity {
                 bookName = name.getText().toString();
                 bookAuthor = author.getText().toString();
 
-                if(!bookName.isEmpty()||!bookAuthor.isEmpty()||!volume.getText().toString().isEmpty()||!price.getText().toString().isEmpty()||!bookIMG.isEmpty()){
-
+                if(bookName.isEmpty() ||bookAuthor.isEmpty()||volume.getText().toString().isEmpty()||price.getText().toString().isEmpty()||bookIMG.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Please fill all information", Toast.LENGTH_SHORT).show();
+                }else{
                     bookVolume = Integer.valueOf(volume.getText().toString());
                     bookPrice = Integer.valueOf(price.getText().toString());
+
                     Book book = new Book(bookName,bookAuthor,bookVolume,bookPrice,bookIMG,0);
                     bookDBRef.child(bookName+"_"+bookVolume).setValue(book);
                     publisherDBRef.setValue(publisherAmount+1);
@@ -120,8 +123,6 @@ public class AddBookActivity extends AppCompatActivity {
                     Intent i = new Intent(AddBookActivity.this, BookActivity.class);
                     i.putExtra("DBReference", publisherRef);
                     startActivity(i);
-                }else{
-                    Toast.makeText(getApplicationContext(), "Please fill all information", Toast.LENGTH_SHORT).show();
                 }
             }
         });

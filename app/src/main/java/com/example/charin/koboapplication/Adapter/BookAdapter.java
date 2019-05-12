@@ -69,14 +69,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
             @Override
             public void onClick(View view) {
                 book.setLikeAmount(book.getLikeAmount()+1);
+                FirebaseDatabase.getInstance().getReference().child("Users")
+                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child("Like_Book").child(book.getName()+"_"+book.getVolume()).setValue(book);
+
                 FirebaseDatabase.getInstance().getReference().child("Publishers")
                         .child(publisherDBRef).child("Books")
                         .child(book.getName()+"_"+book.getVolume())
                         .setValue(book);
-
-                FirebaseDatabase.getInstance().getReference().child("Users")
-                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .child("Like_Book").child(book.getName()+"_"+book.getVolume()).setValue(book);
 
             }
         });
