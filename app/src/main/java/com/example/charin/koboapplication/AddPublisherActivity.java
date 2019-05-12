@@ -1,5 +1,6 @@
 package com.example.charin.koboapplication;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -86,6 +87,16 @@ public class AddPublisherActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(AddPublisherActivity.this, PublisherActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
 
     }
 

@@ -1,5 +1,6 @@
 package com.example.charin.koboapplication.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.charin.koboapplication.AddPublisherActivity;
 import com.example.charin.koboapplication.Object.Publisher;
 import com.example.charin.koboapplication.PublisherActivity;
 import com.example.charin.koboapplication.R;
@@ -53,8 +55,9 @@ public class PublisherDBAdapter extends RecyclerView.Adapter<PublisherDBAdapter.
             @Override
             public void onClick(View view) {
                 userRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("User_Publisher").child(publisherDB.get(position)).setValue(publisherName);
-                Intent i = new Intent(context, PublisherActivity.class);
+                Intent i = new Intent(context, AddPublisherActivity.class);
                 context.startActivity(i);
+                ((Activity)context).finish();
             }
         });
 

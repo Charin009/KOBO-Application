@@ -125,5 +125,17 @@ public class PublisherActivity extends AppCompatActivity {
         }, 1000);
 
     }
+
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(PublisherActivity.this, MainActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
+
+    }
 }
 

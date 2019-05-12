@@ -1,5 +1,6 @@
 package com.example.charin.koboapplication.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -73,7 +74,7 @@ public class PublisherShowAdapter extends RecyclerView.Adapter<PublisherShowAdap
                 public void onClick(View view) {
                     dbRef = publisherDB.get(position);
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setMessage("Delete?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    builder.setMessage("this publisher will disappear from you publisher list").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             userRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("User_Publisher")
@@ -91,7 +92,7 @@ public class PublisherShowAdapter extends RecyclerView.Adapter<PublisherShowAdap
                         }
                     });
                     AlertDialog dialog = builder.create();
-                    dialog.setTitle("Are you sure?");
+                    dialog.setTitle("ัDelete Publisher?");
                     dialog.show();
                 }
             });
@@ -129,7 +130,7 @@ public class PublisherShowAdapter extends RecyclerView.Adapter<PublisherShowAdap
         }
 
         private void Publisher_Amount(int amount){
-            publisher_amount.setText("New Book:" + amount);
+            publisher_amount.setText("New Book:  " + amount);
         }
     }
 }

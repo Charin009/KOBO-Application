@@ -76,7 +76,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
                 FirebaseDatabase.getInstance().getReference().child("Publishers")
                         .child(publisherDBRef).child("Books")
                         .child(book.getName()+"_"+book.getVolume())
-                        .setValue(book);
+                        .child("likeAmount").setValue(book.getLikeAmount());
 
             }
         });
@@ -127,9 +127,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         }
 
         private void setBookPrice(int price){
-            book_price.setText("Price: "+price+" Bath");
+            book_price.setText("Price: "+price+" Bath  ");
         }
 
-        private void setLikeText(int like){likeText.setText("Like: "+like);}
+        private void setLikeText(int like){likeText.setText("Like: "+like+" ");}
     }
 }

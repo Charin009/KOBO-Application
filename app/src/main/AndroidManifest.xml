@@ -19,18 +19,23 @@
         <activity android:name=".LoadingActivity" />
         <activity
             android:name=".AddBookActivity"
+            android:parentActivityName=".BookActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".BookActivity"
+            android:parentActivityName=".PublisherActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PublisherActivity"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AddPublisherActivity"
+            android:parentActivityName=".PublisherActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".RegisterActivity"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

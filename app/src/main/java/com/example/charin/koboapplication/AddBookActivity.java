@@ -182,4 +182,14 @@ public class AddBookActivity extends AppCompatActivity {
             });
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(AddBookActivity.this, BookActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
+
+    }
 }
